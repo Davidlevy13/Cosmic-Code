@@ -1,22 +1,21 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState, useRef } from 'react';
 import './Quiz.css'
 import { data } from "../../assets/data";
 
 const quiz = () => {
 
     let [index, setIndex] = useState(0);
-    let [question, setQuestion] = useState(data[index]);
-    let [lock, setLock] = useState(false);
-    let [score, setScore] = useState(0);
-    let [result, setResult] = useState(false);
+    const [question, setQuestion] = useState(data[index]);
+    const [lock, setLock] = useState(false);
+    const [score, setScore] = useState(0);
+    const [result, setResult] = useState(false);
 
-    let option1 = useRef(null);
-    let option2 = useRef(null);
-    let option3 = useRef(null);
-    let option4 = useRef(null);
+    const option1 = useRef<HTMLButtonElement | null>(null);
+    const option2 = useRef<HTMLButtonElement | null>(null);
+    const option3 = useRef<HTMLButtonElement | null>(null);
+    const option4 = useRef<HTMLButtonElement | null>(null);
 
-    let option_array = [option1, option2, option3, option4];
+    const option_array = [option1, option2, option3, option4];
 
     const checkAns = (e, ans) => {
         if (lock === false) {
@@ -65,10 +64,10 @@ const quiz = () => {
             <hr/>{result?<></>:<>
             <h2>{index+1}. {question.question}</h2>
             <ul>
-                <li ref={option1} onClick={(e)=>{checkAns(e,1)}}>{question.option1}</li>
-                <li ref={option2} onClick={(e)=>{checkAns(e,2)}}>{question.option2}</li>
-                <li ref={option3} onClick={(e)=>{checkAns(e,3)}}>{question.option3}</li>
-                <li ref={option4} onClick={(e)=>{checkAns(e,4)}}>{question.option4}</li>
+                <li><button type="button" ref={option1} onClick={(e)=>{checkAns(e,1)}}>{question.option1}</button></li>
+                <li><button type="button" ref={option2} onClick={(e)=>{checkAns(e,2)}}>{question.option2}</button></li>
+                <li><button type="button" ref={option3} onClick={(e)=>{checkAns(e,3)}}>{question.option3}</button></li>
+                <li><button type="button" ref={option4} onClick={(e)=>{checkAns(e,4)}}>{question.option4}</button></li>
             </ul>
             <button type="button" onClick={next}>next</button>
             <p>Question {index+1} sur {data.length}</p>
