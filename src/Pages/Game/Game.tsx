@@ -1,3 +1,5 @@
+import Quiz from "../../components/Quiz/Quiz";
+
 function Game () {
     return (
 <>
@@ -6,7 +8,7 @@ function Game () {
 <img src="reponse-juste.png" alt="Alien content" className="h-30" />
         
 </section>
-
+<Quiz/>
 </>
         
     )
