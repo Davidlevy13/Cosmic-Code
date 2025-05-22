@@ -38,7 +38,7 @@ const quizReact = ({setResultReact}) => {
         if (lock===true) {
             if (index === react.length -1){
                 setResult(true);
-                setResultReact(true);
+                setResultReact(score >= 3);
                 return 0;
             }
             setIndex(++index);

@@ -38,7 +38,7 @@ const quizJS = ({setResultJS}) => {
         if (lock===true) {
             if (index === js.length -1){
                 setResult(true);
-                setResultJS(true);
+                setResultJS(score >= 3);
                 return 0;
             }
             setIndex(++index);

@@ -38,7 +38,7 @@ const quizSQL = ({setResultSQL}) => {
         if (lock===true) {
             if (index === sql.length -1){
                 setResult(true);
-                setResultSQL(true);
+                setResultSQL(score >= 3);
                 return 0;
             }
             setIndex(++index);

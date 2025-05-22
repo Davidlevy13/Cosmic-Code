@@ -38,7 +38,7 @@ const quizCSS = ({setResultCSS}) => {
         if (lock===true) {
             if (index === css.length -1){
                 setResult(true);
-                setResultCSS(true);
+                setResultCSS(score >= 3);
                 return 0;
             }
             setIndex(++index);
