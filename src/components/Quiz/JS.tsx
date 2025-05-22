@@ -1,12 +1,12 @@
 import React from "react";
 import { useRef, useState } from "react";
 import './Quiz.css'
-import { data } from "../../assets/data";
+import { js } from "../../assets/js";
 
-const quiz = () => {
+const quizJS = () => {
 
     let [index, setIndex] = useState(0);
-    const [question, setQuestion] = useState(data[index]);
+    const [question, setQuestion] = useState(js[index]);
     const [lock, setLock] = useState(false);
     const [score, setScore] = useState(0);
     const [result, setResult] = useState(false);
@@ -36,12 +36,12 @@ const quiz = () => {
 
     const next = () => {
         if (lock===true) {
-            if (index === data.length -1){
+            if (index === js.length -1){
                 setResult(true);
                 return 0;
             }
             setIndex(++index);
-            setQuestion(data[index]);
+            setQuestion(js[index]);
             setLock(false);
             optionArray.map((option) =>{
                 option.current?.classList.remove("wrong");
@@ -53,7 +53,7 @@ const quiz = () => {
 
     const reset = () => {
         setIndex(0);
-        setQuestion(data[0]);
+        setQuestion(js[0]);
         setScore(0);
         setLock(false);
         setResult(false);
@@ -61,7 +61,7 @@ const quiz = () => {
 
     return(
         <div className="container">
-            <h1>Cosmic' Code</h1>
+            <h1>JavaScript - Les Bases</h1>
             <hr/>{result?<></>:<>
             <h2>{index+1}. {question.question}</h2>
             <ul>
@@ -72,13 +72,13 @@ const quiz = () => {
 
             </ul>
             <button className="bouton" type="button" onClick={next}>Suivant</button>
-            <p>Question {index+1} sur {data.length}</p>
+            <p>Question {index+1} sur {js.length}</p>
             </>}
             {result?<>
-            <h2>Votre score {score} sur {data.length}</h2>
+            <h2>Votre score {score} sur {js.length}</h2>
             <button type="button" onClick={reset}>Recommencer</button>
             </>:<></>}
-
+            
             {result && (score >=3 ? 
             (<video autoPlay muted loop width="70%" height="70%" className="mx-auto">
           <source src="/video/alien-content.webm" type="video/webm" />
@@ -86,9 +86,9 @@ const quiz = () => {
         ( <video autoPlay muted loop width="70%" height="70%" className="mx-auto">
           <source src="/video/alien-notcontent.webm" type="video/webm" />
         </video> ))}
-            
+
         </div>
     )
 }
 
-export default quiz
+export default quizJS

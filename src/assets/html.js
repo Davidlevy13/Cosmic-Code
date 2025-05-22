@@ -1,0 +1,42 @@
+export const html = [
+    {
+      question: "Dans un projet web, quelle est généralement la première page à créer ?",
+      option1: "about.html",
+      option2: "contact.html",
+      option3: "index.html",
+      option4: "main.css",
+      ans: 3,
+    },
+    {
+      question: "Quelle balise HTML sert à créer un paragraphe ?",
+      option1: "<div>",
+      option2: "<p>",
+      option3: "<section>",
+      option4: "<text>",
+      ans: 2,
+    },
+    {
+      question: "En HTML, quelle balise est utilisée pour créer un lien cliquable ?",
+      option1: "<img>",
+      option2: "<a>",
+      option3: "<link>",
+      option4: "<p>",
+      ans: 2,
+    },
+    {
+      question: "En HTML, quelle balise est utilisée pour créer un lien cliquable ?",
+      option1: "<img>",
+      option2: "<a>",
+      option3: "<link>",
+      option4: "<p>",
+      ans: 2,
+    },
+    {
+      question: "Quelle est la bonne structure de base d’un document HTML ?",
+      option1: "<head><html><body>",
+      option2: "<html><body><head>",
+      option3: "<html><head><body>",
+      option4: "<body><html><head>",
+      ans: 3,
+    },
+  ];

@@ -7,6 +7,7 @@ import { RouterProvider } from 'react-router-dom'
 
 import Home from './Pages/Home/Home.jsx'
 import Game from './Pages/Game/Game.jsx'
+import NotFound404 from './Pages/NotFound404/NotFound404.js'
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
      children: [
       { path: '/', element: <Home /> },
     { path: '/game', element: <Game /> }, 
+    { path: '*', element: <NotFound404 />},
      ]
   },
 ])

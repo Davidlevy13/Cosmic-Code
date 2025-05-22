@@ -1,4 +1,4 @@
-export const data = [
+export const sql = [
     {
       question: "Dans un projet web, quelle est généralement la première page à créer ?",
       option1: "about.html",

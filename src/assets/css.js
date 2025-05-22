@@ -1,4 +1,4 @@
-export const data = [
+export const css = [
     {
       question: "Dans un projet web, quelle est généralement la première page à créer ?",
       option1: "about.html",
