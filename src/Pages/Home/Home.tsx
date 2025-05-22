@@ -1,24 +1,30 @@
 import Discover from "../../components/Discover/Discover";
 import Progress from "../../components/Progress/Progress";
 import Learning from "../../components/Learning/Learning";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 
 function Home() {
     return (
         <div className="flex flex-col items-center p-4 space-y-6">
-            <img src="/public\logo-cosmic.png" alt="logo Cosmic'Code" className="h-30 bg-white/20 p-2 rounded-3xl"/>
+            <img src="/public\logo-cosmic.png" alt="logo Cosmic'Code" className="h-30 lg:h-60 p-2 "/>
 
             <div className="grid grid-cols-2 gap-2 w-full max-w-md">
                 <section><Discover /></section>
                 <section><Learning /></section>
                 <section className="col-span-2"><Progress /></section>
             </div>
-
-            <button
-              type="button"
-              className="px-20 py-3 bg-orange-500 hover:bg-orange-600 text-white font-bold rounded-xl text-2xl -mt-4"
+            <Link to="/game">
+            <motion.button
+                    whileTap={{ scale: 1.1 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+              className="px-20 py-3 bg-gradient-to-b from bg-purple-900 to-black shadow-white/10 shadow-lg hover:bg-purple-600
+                text-white font-bold rounded-xl text-2xl "
             >
                 JOUER
-            </button>
+            </motion.button>
+            </Link>
         </div>
     )
 }

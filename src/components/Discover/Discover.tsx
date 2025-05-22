@@ -20,10 +20,10 @@ function Discover() {
 
   return (
     <>
-<div className="bg-gradient-to-b from-purple-900 to-black text-white p-6 rounded-2xl w-full max-w-xs shadow-lg flex flex-col items-center gap-4 text-center">
+<div className="bg-gradient-to-b to-black shadow-white/40 text-white p-6 px-2 rounded-2xl shadow-lg flex flex-col items-center gap-4 text-center">
   <span className="text-4xl">👾</span>
   <h1 className="text-2xl font-bold">Découvrir</h1>
-  <h2 className="text-md font-medium">L'univers de Biome</h2>
+  <h2 className="text-md font-medium">L'univers <br/> de Biome !</h2>
   
   <button
     className="mt-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-2 py-2 rounded-lg transition"
