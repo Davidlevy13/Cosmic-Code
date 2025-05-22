@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import './Quiz.css'
 import { react } from "../../assets/react";
 
-const quizReact = () => {
+const quizReact = ({setResultReact}) => {
 
     let [index, setIndex] = useState(0);
     const [question, setQuestion] = useState(react[index]);
@@ -38,6 +38,7 @@ const quizReact = () => {
         if (lock===true) {
             if (index === react.length -1){
                 setResult(true);
+                setResultReact(true);
                 return 0;
             }
             setIndex(++index);
@@ -57,6 +58,7 @@ const quizReact = () => {
         setScore(0);
         setLock(false);
         setResult(false);
+        setResultReact(false);
     }
 
     return(
@@ -74,10 +76,13 @@ const quizReact = () => {
             <button className="bouton" type="button" onClick={next}>Suivant</button>
             <p>Question {index+1} sur {react.length}</p>
             </>}
-            {result?<>
+            {result && (score >=3 ? (<>
             <h2>Votre score {score} sur {react.length}</h2>
-            <button type="button" onClick={reset}>Recommencer</button>
-            </>:<></>}
+            <p className="text-center font-bold text-2xl text-[#553f9a]">Bravo !</p>
+            </>) : (<>
+            <h2>Votre score {score} sur {react.length}</h2>
+            <button className="recommencer" type="button" onClick={reset}>Recommencer</button>
+            </>)) }
             
             {result && (score >=3 ? 
             (<video autoPlay muted loop width="70%" height="70%" className="mx-auto">

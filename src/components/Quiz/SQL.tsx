@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import './Quiz.css'
 import { sql } from "../../assets/sql";
 
-const quizSQL = () => {
+const quizSQL = ({setResultSQL}) => {
 
     let [index, setIndex] = useState(0);
     const [question, setQuestion] = useState(sql[index]);
@@ -38,6 +38,7 @@ const quizSQL = () => {
         if (lock===true) {
             if (index === sql.length -1){
                 setResult(true);
+                setResultSQL(true);
                 return 0;
             }
             setIndex(++index);
@@ -57,6 +58,7 @@ const quizSQL = () => {
         setScore(0);
         setLock(false);
         setResult(false);
+        setResultSQL(false);
     }
 
     return(
@@ -72,12 +74,15 @@ const quizSQL = () => {
 
             </ul>
             <button className="bouton" type="button" onClick={next}>Suivant</button>
-            <p>Question {index+1} sur {DiSqllite.length}</p>
+            <p>Question {index+1} sur {sql.length}</p>
             </>}
-            {result?<>
+            {result && (score >=3 ? (<>
             <h2>Votre score {score} sur {sql.length}</h2>
-            <button type="button" onClick={reset}>Recommencer</button>
-            </>:<></>}
+            <p className="text-center font-bold text-2xl text-[#553f9a]">Bravo !</p>
+            </>) : (<>
+            <h2>Votre score {score} sur {sql.length}</h2>
+            <button className="recommencer" type="button" onClick={reset}>Recommencer</button>
+            </>)) }
             
             {result && (score >=3 ? 
             (<video autoPlay muted loop width="70%" height="70%" className="mx-auto">

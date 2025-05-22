@@ -16,12 +16,12 @@ export const html = [
       ans: 2,
     },
     {
-      question: "En HTML, quelle balise est utilisée pour créer un lien cliquable ?",
-      option1: "<img>",
-      option2: "<a>",
-      option3: "<link>",
-      option4: "<p>",
-      ans: 2,
+      question: "Que signifie l’attribut alt dans une balise <img> ?",
+      option1: "Il définit la taille de l’image",
+      option2: "Il donne une couleur de fond",
+      option3: "Il fournit un texte alternatif si l’image ne s’affiche pas",
+      option4: "Il centre l’image",
+      ans: 3,
     },
     {
       question: "En HTML, quelle balise est utilisée pour créer un lien cliquable ?",

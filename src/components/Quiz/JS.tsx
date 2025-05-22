@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import './Quiz.css'
 import { js } from "../../assets/js";
 
-const quizJS = () => {
+const quizJS = ({setResultJS}) => {
 
     let [index, setIndex] = useState(0);
     const [question, setQuestion] = useState(js[index]);
@@ -38,6 +38,7 @@ const quizJS = () => {
         if (lock===true) {
             if (index === js.length -1){
                 setResult(true);
+                setResultJS(true);
                 return 0;
             }
             setIndex(++index);
@@ -57,6 +58,8 @@ const quizJS = () => {
         setScore(0);
         setLock(false);
         setResult(false);
+        setResultJS(false);
+        
     }
 
     return(
@@ -74,10 +77,13 @@ const quizJS = () => {
             <button className="bouton" type="button" onClick={next}>Suivant</button>
             <p>Question {index+1} sur {js.length}</p>
             </>}
-            {result?<>
+            {result && (score >=3 ? (<>
             <h2>Votre score {score} sur {js.length}</h2>
-            <button type="button" onClick={reset}>Recommencer</button>
-            </>:<></>}
+            <p className="text-center font-bold text-2xl text-[#553f9a]">Bravo !</p>
+            </>) : (<>
+            <h2>Votre score {score} sur {js.length}</h2>
+            <button className="recommencer" type="button" onClick={reset}>Recommencer</button>
+            </>)) }
             
             {result && (score >=3 ? 
             (<video autoPlay muted loop width="70%" height="70%" className="mx-auto">

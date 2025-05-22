@@ -1,42 +1,46 @@
 export const sql = [
-    {
-      question: "Dans un projet web, quelle est généralement la première page à créer ?",
-      option1: "about.html",
-      option2: "contact.html",
-      option3: "index.html",
-      option4: "main.css",
-      ans: 3,
-    },
-    {
-      question: "En HTML, quelle balise est utilisée pour créer un lien cliquable ?",
-      option1: "<img>",
-      option2: "<a>",
-      option3: "<link>",
-      option4: "<p>",
-      ans: 2,
-    },
-    {
-      question: "En CSS, que signifie la propriété color ?",
-      option1: "Elle définit la couleur d'un arrière plan",
-      option2: "Elle définit la taille de la police",
-      option3: "Elle définit la couleur du texte",
-      option4: "Elle ajoute une image de fond",
-      ans: 3,
-    },
-    {
-      question: "En JavaScript, que renvoie le code suivant : console.log(0 == '0'); ?",
-      option1: "true",
-      option2: "false",
-      option3: "undefined",
-      option4: "Une erreur",
-      ans: 1,
-    },
-    {
-      question: "En JavaScript, quel est le rôle d'une boucle for ?",
-      option1: "Elle exécute une fonction mathématique",
-      option2: "Elle exécute une action tant que la condition est fausse",
-      option3: "Elle répète une action pour un ensemble de valeurs",
-      option4: "Elle vérifie une condition une seule fois",
-      ans: 3,
-    },
-  ];
+  {
+    question:
+      "Quelle commande SQL est utilisée pour sélectionner des données à partir d'une table ?",
+    option1: "SELECT",
+    option2: "INSERT",
+    option3: "UPDATE",
+    option4: "DELETE",
+    ans: 1,
+  },
+  {
+    question:
+      "Quelle commande SQL est utilisée pour ajouter de nouvelles données dans une table ?",
+    option1: "SELECT",
+    option2: "INSERT",
+    option3: "UPDATE",
+    option4: "DELETE",
+    ans: 2,
+  },
+  {
+    question:
+      "Sélectionnez la définition de ce que fait la commande UPDATE en SQL.",
+    option1: "Elle sélectionne des données dans une table.",
+    option2: " Elle ajoute de nouvelles données dans une table.",
+    option3: "Elle modifie des données existantes dans une table.",
+    option4: " Elle supprime des données d'une table.",
+    ans: 3,
+  },
+  {
+    question:
+      "Quelle clause SQL est utilisée pour filtrer les résultats d'une requête SELECT ?",
+    option1: "WHERE",
+    option2: "GROUP BY",
+    option3: "ORDER BY",
+    option4: "HAVING",
+    ans: 1,
+  },
+  {
+    question: "Décrivez brièvement l'utilisation de la clause ORDER BY en SQL.",
+    option1: "Elle filtre les résultats d'une requête.",
+    option2: "Elle regroupe les résultats d'une requête.",
+    option3: "Elle trie les résultats d'une requête.",
+    option4: "Elle supprime les doublons dans les résultats d'une requête.",
+    ans: 3,
+  },
+];

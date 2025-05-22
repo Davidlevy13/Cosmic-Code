@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import './Quiz.css'
 import { css } from "../../assets/css";
 
-const quizCSS = () => {
+const quizCSS = ({setResultCSS}) => {
 
     let [index, setIndex] = useState(0);
     const [question, setQuestion] = useState(css[index]);
@@ -38,10 +38,11 @@ const quizCSS = () => {
         if (lock===true) {
             if (index === css.length -1){
                 setResult(true);
+                setResultCSS(true);
                 return 0;
             }
             setIndex(++index);
-            setQuestion(data[index]);
+            setQuestion(css[index]);
             setLock(false);
             optionArray.map((option) =>{
                 option.current?.classList.remove("wrong");
@@ -57,6 +58,7 @@ const quizCSS = () => {
         setScore(0);
         setLock(false);
         setResult(false);
+        setResultCSS(false);
     }
 
     return(
@@ -72,12 +74,15 @@ const quizCSS = () => {
 
             </ul>
             <button className="bouton" type="button" onClick={next}>Suivant</button>
-            <p>Question {index+1} sur {CSSAnimation.length}</p>
+            <p>Question {index+1} sur {css.length}</p>
             </>}
-            {result?<>
+            {result && (score >=3 ? (<>
             <h2>Votre score {score} sur {css.length}</h2>
-            <button type="button" onClick={reset}>Recommencer</button>
-            </>:<></>}
+            <p className="text-center font-bold text-2xl text-[#553f9a]">Bravo !</p>
+            </>) : (<>
+            <h2>Votre score {score} sur {css.length}</h2>
+            <button className="recommencer" type="button" onClick={reset}>Recommencer</button>
+            </>)) }
             
             {result && (score >=3 ? 
             (<video autoPlay muted loop width="70%" height="70%" className="mx-auto">

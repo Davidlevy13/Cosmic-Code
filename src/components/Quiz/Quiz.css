@@ -13,7 +13,8 @@
 }
 
 .container h1{
-    
+    font-size: 25px;
+    font-weight: bold;
 }
 
 .container hr{
@@ -41,7 +42,22 @@
 
 .container .bouton{
     margin: auto;
+    padding-left: 15px;
+    padding-right: 15px;
     width: 150px;
+    height: 40px;
+    background: #553f9a;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 500;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.container .recommencer{
+    margin: auto;
+    padding-left: 20px;
+    padding-right: 20px;
     height: 40px;
     background: #553f9a;
     color: #fff;
