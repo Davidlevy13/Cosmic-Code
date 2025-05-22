@@ -1,0 +1,9 @@
+.container .wrong{
+    background: #FFEBEB;
+    border-color: #FF4A4A;
+}
+
+.container .correct{
+    background: #DFFFF2;
+    border-color: #00D397;
+}
