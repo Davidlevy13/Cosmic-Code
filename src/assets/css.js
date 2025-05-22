@@ -1,0 +1,42 @@
+export const css = [
+    {
+      question: "Quelle propriété CSS est utilisée pour changer la couleur du texte ?",
+      option1: "Text-color",
+      option2: "Font-color",
+      option3: "Color",
+      option4: "Text-style",
+      ans: 3,
+    },
+    {
+      question: "Quelle propriété CSS est utilisée pour ajouter de l'espace à l'intérieur d'un élément ?",
+      option1: "Margin",
+      option2: "Padding",
+      option3: "Border",
+      option4: "Spacing",
+      ans: 2,
+    },
+    {
+      question: "Quelle propriété CSS est utilisée pour changer la taille du texte ?",
+      option1: "Text-size",
+      option2: "Font-size",
+      option3: "Size",
+      option4: "Text-style",
+      ans: 2,
+    },
+    {
+      question: "Quelle propriété CSS est utilisée pour centrer du texte horizontalement ?",
+      option1: "Text-align: center",
+      option2: "Align: center",
+      option3: "Text-center: true",
+      option4: "Horizontale-align: center",
+      ans: 1,
+    },
+    {
+      question: "Quelle propriété CSS est utilisée pour ajouter une marge à l'extérieur d'un élément ?",
+      option1: "Padding",
+      option2: "Border",
+      option3: "Margin",
+      option4: "Spacing",
+      ans: 3,
+    },
+  ];

@@ -4,12 +4,12 @@ function Progress() {
   const [showModal, setShowModal] = useState(false)
 
   const fullText = `
-Maintenant que tu as exploré l’univers et appris les bases, il est temps de passer au niveau supérieur.
+Maintenant que tu as exploré l’univers et appris les bases, il est temps d'aller plus loin.
 
 Avec Biome, tu vas affiner tes compétences, relever des défis plus complexes et débloquer de nouveaux secrets du codage.
 
 🔁 Un voyage vers l’expertise  
-À chaque planète atteinte, de nouvelles mécaniques apparaissent : boucles, fonctions, objets...
+Avec Biome, prépare-toi à explorer des planètes uniques, chacune dédiée à une technologie du web et à un thème bien à elle. À chaque escale, de nouvelles mécaniques, de nouveaux défis… et de grandes découvertes !
 
 Biome compte sur toi pour résoudre des énigmes toujours plus corsées et repousser les limites de tes capacités.
 

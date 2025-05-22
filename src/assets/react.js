@@ -1,0 +1,42 @@
+export const react = [
+    {
+      question: "Quelle commande permet de créer un nouveau projet React avec Create React App ?",
+      option1: "npm start react-app",
+      option2: "npx create-react-app my-app",
+      option3: "npm install react",
+      option4: "npx react-init",
+      ans: 2,
+    },
+    {
+      question: "Que renvoie une fonction composant React valide ?",
+      option1: "Du texte brut",
+      option2: "Une balise HTML en string",
+      option3: "Un objet CSS",
+      option4: "Du JSX",
+      ans: 4,
+    },
+    {
+      question: "À quoi sert React dans le développement web ?",
+      option1: "À styliser les pages web avec du CSS",
+      option2: "À gérer une base de données",
+      option3: "À construire des interfaces utilisateur dynamiques en JavaScript",
+      option4: "À créer des animations en 3D",
+      ans: 3,
+    },
+    {
+      question: "Quel hook permet de gérer l’état local dans un composant fonctionnel?",
+      option1: "useEffect()",
+      option2: "useContext()",
+      option3: "useState()",
+      option4: "useRef()",
+      ans: 3,
+    },
+    {
+      question: "Comment s’appelle le mécanisme qui permet de mettre à jour l’interface quand les données changent ?",
+      option1: "Virtual DOM",
+      option2: "Real DOM",
+      option3: "Webpack",
+      option4: "DOM Tree",
+      ans: 1,
+    },
+  ];

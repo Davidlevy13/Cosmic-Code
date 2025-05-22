@@ -7,15 +7,15 @@ function Discover() {
 
   const fullText = `
     Pars à l'aventure avec Biome, un alien intrépide venu des confins de l’espace. 
-    Son objectif : atteindre la Terre en résolvant des énigmes de programmation !
+    Son objectif : explorer la galaxie, résoudre des énigmes de programmation et établir des bases sur différentes planètes !
     
-    À chaque étape de son voyage, Biome fait face à des défis logiques, des obstacles imprévus et des mystères cosmiques. 
-    Mais il n’est pas seul : grâce à toi, il peut avancer !
+    🌌 À chaque étape de son voyage, Biome fait face à des défis logiques, des obstacles imprévus et des mystères cosmiques. 
+    Mais il n’est pas seul : grâce à ton aide, il peut avancer et construire l'avenir de la galaxie !
 
-    En surmontant chaque épreuve, Biome se rapproche de son but. 
-    Débloque des niveaux, développe tes compétences en codage, et découvre un univers fascinant.
+   🔧 En surmontant chaque épreuve, Biome se rapproche de son but. 
+    Réponds aux questions, développe tes compétences en codage et découvre un univers fascinant.
 
-    Prêt à embarquer ? Aide Biome à rentrer chez lui et deviens un véritable explorateur du code !
+    Prêt à embarquer ? Aide Biome à accomplir sa mission et deviens un véritable explorateur du code !
   `.trim()
 
   return (

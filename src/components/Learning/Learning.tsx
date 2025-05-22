@@ -6,9 +6,9 @@ function Learning() {
   const fullText = `
 Dans son voyage à travers l’espace, Biome a besoin de ton aide pour résoudre des énigmes de programmation.
 
-À chaque planète visitée, une nouvelle question apparaît. Tu dois choisir la bonne réponse parmi plusieurs propositions.
+🪐 À chaque planète visitée, une nouvelle série de question apparaît. Tu dois choisir la bonne réponse parmi plusieurs propositions.
 
-Ces questions couvrent aussi bien les bases que des notions un peu plus avancées.
+💡 Les défis couvrent aussi bien les fondamentaux du code que des concepts un peu plus avancés. Pas besoin d’être un expert : chaque bonne réponse te fait progresser.
 
 Plus tu aides Biome, plus tu progresses toi aussi dans l’univers du code !
 

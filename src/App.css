@@ -5,6 +5,7 @@ html, body, #root, section.relative {
   margin: 0;
   padding: 0;
   height: 100%;
+  cursor: url('./soucoupe-curseur.png') 16 16, auto;
 }
 
 #background-video {
@@ -21,3 +22,16 @@ html, body, #root, section.relative {
   position: relative;
   z-index: 1; 
 }
+
+
+.title {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: 0.2fr;
+grid-column-gap: 0px;
+grid-row-gap: 0px;
+}
+
+.div1 { grid-area: 1 / 1 / 2 / 2; }
+.div2 { grid-area: 1 / 1 / 2 / 4; }
+
