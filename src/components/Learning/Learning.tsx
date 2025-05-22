@@ -1,14 +1,56 @@
-function Learning () {
-    return (
-<>
-<h1>Apprendre</h1>
-<h2>Apprends à coder avec Biome !</h2>
-<p className="">Dans son voyage à travers l’espace, Biome a besoin de ton aide pour résoudre des énigmes de programmation. <br /> À chaque étape, tu répondras à des questions simples sur le codage pour l’aider à avancer.</p>
-<h2>Comment ça fonctionne ?</h2>
-<p>Chaque fois que Biome arrive dans une nouvelle planète, une question de codage apparaît. Il te suffit de choisir la bonne réponse parmi plusieurs options pour l’aider à progresser. <br /> Ces questions couvrent des concepts de base, comme des concepts un peu plus poussés.</p>
+import { useState } from 'react'
 
-</>
-    )
+function Learning() {
+  const [showModal, setShowModal] = useState(false)
+
+  const fullText = `
+Dans son voyage à travers l’espace, Biome a besoin de ton aide pour résoudre des énigmes de programmation.
+
+À chaque planète visitée, une nouvelle question apparaît. Tu dois choisir la bonne réponse parmi plusieurs propositions.
+
+Ces questions couvrent aussi bien les bases que des notions un peu plus avancées.
+
+Plus tu aides Biome, plus tu progresses toi aussi dans l’univers du code !
+
+Prêt à relever le défi ?
+  `.trim()
+
+  return (
+    <>
+      
+      <div className="bg-gradient-to-b from-indigo-900 to-black text-white p-6 rounded-2xl max-w-xs shadow-lg flex flex-col items-center gap-4 text-center">
+        <span className="text-4xl">🧠</span>
+        <h1 className="text-2xl font-bold">Apprendre</h1>
+        <h2 className="text-md font-medium">Apprends avec Biome !</h2>
+        
+        <button
+          className="mt-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-2 py-2 rounded-lg transition"
+          onClick={() => setShowModal(true)}
+        >
+          En savoir plus
+        </button>
+      </div>
+
+      {/* Pop-up */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4 md:px-8">
+          <div className="bg-white text-black w-full max-w-4xl md:max-w-4xl  h-[90vh] overflow-y-auto p-8 md:p-12 rounded-xl md:rounded-3xl relative shadow-2xl md:border md:border-gray-300">
+            <button
+              className="absolute top-4 right-4 text-2xl font-bold text-gray-600 hover:text-red-600"
+              onClick={() => setShowModal(false)}
+              aria-label="Fermer la fenêtre"
+            >
+              &times;
+            </button>
+            <h2 className="text-3xl font-bold mb-6 text-center">🧠 Apprendre avec Biome</h2>
+            <div className="text-base leading-relaxed space-y-5 whitespace-pre-line">
+              {fullText}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  )
 }
 
-export default Learning;
+export default Learning

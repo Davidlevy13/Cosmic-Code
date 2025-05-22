@@ -9,8 +9,9 @@ function App() {
     <section className="relative z-10">
     <video autoPlay muted loop id="background-video">
   <source src="/video/background-galaxy.mp4" type="video/mp4"/>
-<Home/>
+
 </video>
+<Home/>
 </section>
     </>
   )

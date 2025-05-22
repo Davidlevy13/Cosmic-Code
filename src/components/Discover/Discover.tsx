@@ -1,20 +1,59 @@
+import { useState } from 'react'
+
 function Discover() {
-    return (
-<>
-<section className="border-2 border-black block">
-<h1 className="font-bold text-2xl">Découvrir</h1>
-<h2>Découvre l'univers de Biome!</h2>
-<p className="">Bienvenue dans l’aventure intergalactique de Biome, un alien venu des tréfonds de l’espace, avec une mission très spéciale : atteindre la Terre !
-Mais pour y parvenir, Biome doit traverser de nombreux cosmiques mystérieux, chacun rempli d’énigmes de programmation à résoudre.</p>
-<p>Le but de Biome est simple, mais l’aventure est pleine de surprises ! À chaque étape de son voyage à travers l’espace, il doit résoudre des problèmes de codage et faire des choix pour avancer. Les obstacles sont nombreux, mais grâce à toi, il pourra les surmonter !</p>
-<h2>Comment Biome peut-il atteindre la Terre ?</h2>
-<p>En résolvant des énigmes de programmation, Biome débloque de nouveaux niveaux et découvre des secrets cachés qui l'aideront à progresser dans l’espace. Chaque défi réussi le rapproche de son objectif ultime : atteindre enfin la Terre !</p>
-<h2>Es-tu prêt à aider Biome ?</h2>
-<p>Grâce à toi et à tes nouvelles compétences en codage, Biome pourra surmonter tous les obstacles et arriver enfin chez lui, sur la Terre.</p>
-<p>Rejoins Biome et deviens un expert en programmation tout en explorant l’univers aux côtés de ton nouvel ami extraterrestre !</p>
-</section>
-</>
-    )
+  const [showModal, setShowModal] = useState(false)
+
+  const shortPreview = `Pars à l'aventure avec Biome, un alien intrépide venu de l'espace ! Pour atteindre la Terre, il devra relever des défis de programmation et surmonter des épreuves intergalactiques. À toi de l’aider à réussir !`
+
+  const fullText = `
+    Pars à l'aventure avec Biome, un alien intrépide venu des confins de l’espace. 
+    Son objectif : atteindre la Terre en résolvant des énigmes de programmation !
+    
+    À chaque étape de son voyage, Biome fait face à des défis logiques, des obstacles imprévus et des mystères cosmiques. 
+    Mais il n’est pas seul : grâce à toi, il peut avancer !
+
+    En surmontant chaque épreuve, Biome se rapproche de son but. 
+    Débloque des niveaux, développe tes compétences en codage, et découvre un univers fascinant.
+
+    Prêt à embarquer ? Aide Biome à rentrer chez lui et deviens un véritable explorateur du code !
+  `.trim()
+
+  return (
+    <>
+<div className="bg-gradient-to-b from-purple-900 to-black text-white p-6 rounded-2xl w-full max-w-xs shadow-lg flex flex-col items-center gap-4 text-center">
+  <span className="text-4xl">👾</span>
+  <h1 className="text-2xl font-bold">Découvrir</h1>
+  <h2 className="text-md font-medium">L'univers de Biome</h2>
+  
+  <button
+    className="mt-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold px-2 py-2 rounded-lg transition"
+    onClick={() => setShowModal(true)}
+  >
+    En savoir plus
+  </button>
+</div>
+
+
+      {/* Pop-up */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4 md:px-8">
+          <div className="bg-white text-black w-full max-w-4xl md:max-w-4xl  h-[90vh] overflow-y-auto p-8 md:p-12 rounded-xl md:rounded-3xl relative shadow-2xl md:border md:border-gray-300">
+            <button
+              className="absolute top-4 right-4 text-2xl font-bold text-gray-600 hover:text-red-600"
+              onClick={() => setShowModal(false)}
+              aria-label="Fermer la fenêtre"
+            >
+              &times;
+            </button>
+            <h2 className="text-3xl font-bold mb-6 text-center">👾 L'univers de Biome</h2>
+            <div className="text-base leading-relaxed space-y-5 whitespace-pre-line">
+              {fullText}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  )
 }
 
-export default Discover;
+export default Discover
