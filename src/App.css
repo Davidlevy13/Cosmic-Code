@@ -1,12 +1,23 @@
 @import "tailwindcss";
 
 
+html, body, #root, section.relative {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 #background-video {
   position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   object-fit: cover;
+  z-index: -1; 
+}
+
+.content {
+  position: relative;
+  z-index: 1; 
 }
