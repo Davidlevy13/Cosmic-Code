@@ -13,7 +13,7 @@ function Game () {
     const [isMuted, setIsMuted] = useState(false);
     const [isPlaying, setIsPlaying] = useState(false);
     const [showModal, setShowModal] = useState(false)
-
+    const [isPopupVisible, setIsPopupVisible] = useState(false)
     const [selectedQuiz, setSelectedQuiz] = useState("");
     const [isSuccessHTML, setIsSuccessHTML] = useState(false);
     const [isSuccessCSS, setIsSuccessCSS] = useState(false);
@@ -37,12 +37,20 @@ function Game () {
   }, [moving]);
 
   const handleClick = () => {
-    setShowModal(true);
+    setIsPopupVisible(true);
   };
 
   const handleClose = () => {
-    setShowModal(false);
+    setIsPopupVisible(false);
   };
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsPopupVisible(false);
+    }, 5750); 
+
+    return () => clearTimeout(timer); 
+  }, []);
 
     const startAudio = () => {
         if (audioRef.current) {
@@ -92,17 +100,18 @@ function Game () {
 
     return (
 <>
+<div>
 <Link to="/">
 <img
       src="reponse-juste.png"
       alt="Alien content"
-      className="w-20 animate-bounce-slow mt-2"
+      className="w-20 lg:w-40 animate-bounce-slow mt-2"
     />
     </Link>
-<section className="flex justify-center -mt-15 ">
+<section className="flex justify-center -mt-15 lg:-mt-30 ">
   <button
     onClick={toggleMute}
-    className="absolute top-3 right-3 text-2xl text-white hover:scale-110 transition-transform duration-200"
+    className="absolute top-3 right-3 text-2xl lg:text-5xl text-white hover:scale-110 transition-transform duration-200 cursor-pointer"
   >
     {!isMuted ? <GoUnmute /> : <GoMute />}
   </button>
@@ -111,7 +120,7 @@ function Game () {
 
   <div className="flex items-center">
     
-    <h1 className="text-2xl font-orbitron text-[#0ACAD4] font-semibold text-center mb-5">
+    <h1 className="text-2xl lg:text-6xl font-orbitron text-[#0ACAD4] font-semibold text-center mb-5">
       <span className="text-white italic">Explore les planètes</span><br />
       <span className="text-green-200 font-light">avec </span>
       <span className="text-[#0ACAD4] font-bold">BIOME</span>
@@ -131,18 +140,21 @@ function Game () {
         }}
       />
 
-      {showModal && (
-        <div className="fixed top-0 left-0 w-full h-full bg-white/60 flex items-center justify-center z-50">
-          <div className="bg-white  p-6 rounded-xl shadow-xl w-96 text-center">
-                        <button
-              onClick={handleClose}
-              className="mt-2 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
-            >
-              Fermer
-            </button>
-          </div>
-        </div>
-      )}
+      {isPopupVisible && (
+  <div className="fixed top-0 left-0 w-full h-full bg-white/60 flex items-center justify-center z-50">
+    <div className=" p-6  w-96 text-center">
+      <video autoPlay className="w-150 h-auto mx-auto">
+        <source src="/video/alien-wb.webm" type="video/webm" />
+      </video>
+      <button
+        onClick={handleClose}
+        className="mt-2 px-2 py-1 bg-[#0ACAD4] text-black rounded-lg hover:bg-blue-700 transition cursor-pointer"
+      >
+        Fermer
+      </button>
+    </div>
+  </div>
+)}
 
 
 
@@ -151,7 +163,7 @@ function Game () {
     setSelectedQuiz("HTML");
   }}>
     {!isSuccessHTML ? (
-      <img src="planeteHTML.png" alt="HTML" className="h-25 lg:h-35 absolute top-[20px] left-[50px] w-[100px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full" />) : ( <img src="checkHTML.png" alt="HTML" className="h-35 absolute top-[20px] left-[50px] w-[100px]  rounded-full" />) }
+      <img src="planeteHTML.png" alt="HTML" className="h-25 lg:h-45 absolute top-[20px] lg:top-[90px] left-[50px] lg:left-[280px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer" />) : ( <img src="checkHTML.png" alt="HTML" className="h-35 lg:h-75 absolute top-[20px] lg:top-[90px] left-[50px] lg:left-[280px]  rounded-full cursor-pointer" />) }
   </button>
 
   <button onClick={() => {
@@ -159,7 +171,7 @@ function Game () {
     setSelectedQuiz("CSS");
   }}>
     {!isSuccessCSS ? (
-      <img src="planeteCSS.png" alt="CSS" className="h-25 absolute top-[90px] left-[230px] w-[100px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full" />) : ( <img src="checkCSS.png" alt="CSS" className="h-35 absolute top-[90px] left-[230px] w-[100px]  rounded-full" />) }
+      <img src="planeteCSS.png" alt="CSS" className="h-25 lg:h-45 absolute top-[90px] lg:top-[170px] left-[200px] lg:left-[700px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer" />) : ( <img src="checkCSS.png" alt="CSS" className="h-35 lg:h-75 absolute top-[90px] left-[230px] lg:left-[700px]   rounded-full cursor-pointer" />) }
   </button>
 
  <button onClick={() => {
@@ -167,7 +179,7 @@ function Game () {
   setSelectedQuiz("JS");
  }}>
   {!isSuccessJS ? (
-    <img src="planeteJS.png" alt="JS" className="h-25 absolute top-[190px] left-[80px] w-[100px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full" />) : ( <img src="checkJS.png" alt="JS" className="h-35 absolute top-[190px] left-[80px] w-[100px]  rounded-full" />) }
+    <img src="planeteJS.png" alt="JS" className="h-25 lg:h-45 absolute top-[190px] lg:top-[390px] left-[80px] lg:left-[350px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer" />) : ( <img src="checkJS.png" alt="JS" className="h-35 lg:h-75 absolute top-[190px] lg:top-[390px] left-[80px] lg:left-[350px]   rounded-full cursor-pointer" />) }
 </button> 
 
  <button onClick={() => {
@@ -175,7 +187,7 @@ function Game () {
   setSelectedQuiz("React");
  }}>
   {!isSuccessReact ? (
-     <img src="planeteREACT.png" alt="React" className="h-25 absolute top-[260px] left-[250px] w-[100px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full" />) : ( <img src="checkREACT.png" alt="React" className="h-35 absolute top-[260px] left-[250px] w-[100px]  rounded-full" />)}
+     <img src="planeteREACT.png" alt="React" className="h-25 lg:h-45 absolute top-[260px] lg:top-[480px] left-[200px] lg:left-[710px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer" />) : ( <img src="checkREACT.png" alt="React" className="h-35 lg:h-75 absolute top-[260px] lg:top-[480px] left-[250px] lg:left-[710px] rounded-full cursor-pointer" />)}
    </button> 
 
  <button onClick={() => {
@@ -183,7 +195,7 @@ function Game () {
       setSelectedQuiz("SQL");
     }}>
       {!isSuccessSQL ? (
-         <img src="planeteSQL.png" alt="SQL" className="h-25 w-25 absolute top-[360px] left-[90px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full"/>) : ( <img src="checkSQL.png" alt="SQL" className="h-35 absolute top-[360px] left-[90px] w-[100px]  rounded-full" />) }
+         <img src="planeteSQL.png" alt="SQL" className="h-25 lg:h-45 absolute top-[360px] lg:top-[680px] left-[90px] lg:left-[450px] animate-[spin_30s_linear_infinite] shadow-lg shadow-white/40 rounded-full cursor-pointer"/>) : ( <img src="checkSQL.png" alt="SQL" className="h-35 lg:h-75 absolute top-[360px] lg:top-[680px] left-[90px] lg:left-[450px]  rounded-full cursor-pointer" />) }
   </button>
 
 </section>
@@ -193,7 +205,7 @@ function Game () {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4">
           <div className="bg-white text-black w-full  overflow-y-auto p-8  rounded-xl shadow-2xl  ">
             <button
-              className="absolute top-3 right-4 text-4xl font-extrabold text-[#4ABFA9] hover:text-red-600"
+              className="absolute top-3 right-4 text-4xl font-extrabold text-[#4ABFA9] hover:text-red-600 cursor-pointer"
               onClick={() => setShowModal(false)}
               aria-label="Fermer la fenêtre"
             >
@@ -209,7 +221,7 @@ function Game () {
           </div>
         </div>
       )}
-
+</div>
 </>
         
     )
